@@ -10,21 +10,25 @@ import java.util.Arrays;
 
 
 public class ArraysEx {
-    public static int[] integerArray;
-    public static int[] diceRolls;
+    private static int[] integerArray;
+    private static int[] diceRolls;
+    
+    static final int SIDES = 6; //Number of sides of a die
+    static final int RUNS = 6000000; //Number of simulations to run
+    static final int RANGE = 500;  //Range for random numbers
         
-    //Fill the array of integers
+    //Fill the array with random integers
     public static void fillArray(int[] integerArray) {
         Random randNum = new Random();
         
         for (int i = 0; i < integerArray.length; i++){  //Standard for loop
-            integerArray[i] = randNum.nextInt(500);
+            integerArray[i] = randNum.nextInt(RANGE);
         }
     }
     
     //Print out all values in array
     public static void printArray(int[] integerArray) {
-        for (int num: integerArray) {  //Ehanced for loop
+        for (int num: integerArray) {  //Enhanced for loop
             System.out.printf("%3d ", num);
         }
         System.out.println();
@@ -34,8 +38,8 @@ public class ArraysEx {
     public static void simuRolls(int[] diceRolls) {
         Random randNum = new Random();
 
-        for (int j = 0; j < 6000000; j++) {  //Standard for loop
-            ++diceRolls[randNum.nextInt(6)];
+        for (int j = 0; j < RUNS; j++) {  //Standard for loop
+            ++diceRolls[randNum.nextInt(SIDES)];
         }        
     }
     
@@ -56,18 +60,14 @@ public class ArraysEx {
         
         
         //Dice roll simulation
-        System.out.println("Simulating 6,000,000 million die rolls...");
-        diceRolls = new int[6];
+        System.out.printf("Simulating %d million die rolls... %n", RUNS);
+        diceRolls = new int[SIDES];
 
         simuRolls(diceRolls);
         
-        for (int k = 0; k < 6; k++) {
+        for (int k = 0; k < SIDES; k++) {
             System.out.printf("Face: %d   Number of rolls: %d%n", k+1, diceRolls[k]);
         }
-        
-
-        
-        
         
     }//End of main
     
