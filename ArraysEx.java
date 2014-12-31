@@ -8,7 +8,6 @@ import java.util.Arrays;
  * From "Java How To Program, 10/e, Early Objects" - Chapter 7.
  */
 
-
 public class ArraysEx {
     private static int[] integerArray;
     private static int[] diceRolls;
@@ -21,18 +20,20 @@ public class ArraysEx {
     public static void fillArray(int[] integerArray) {
         Random randNum = new Random();
         
-        for (int i = 0; i < integerArray.length; i++){  //Standard for loop
+        //Standard for loop
+        for (int i = 0; i < integerArray.length; i++) {  
             integerArray[i] = randNum.nextInt(RANGE);
         }
-    }
+    } //End fillArray
     
     //Print out all values in array
     public static void printArray(int[] integerArray) {
-        for (int num: integerArray) {  //Enhanced for loop
+        //Enhanced for loop
+        for (int num: integerArray) {
             System.out.printf("%3d ", num);
         }
         System.out.println();
-    }
+    } //End printArray
     
     //Simulate dice rolls
     public static void simuRolls(int[] diceRolls) {
@@ -41,7 +42,7 @@ public class ArraysEx {
         for (int j = 0; j < RUNS; j++) {  //Standard for loop
             ++diceRolls[randNum.nextInt(SIDES)];
         }        
-    }
+    } //End simuRolls
     
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -69,6 +70,6 @@ public class ArraysEx {
             System.out.printf("Face: %d   Number of rolls: %d%n", k+1, diceRolls[k]);
         }
         
-    }//End of main
+    } //End of main
     
-}//End of Arrays
+} //End of Arrays
