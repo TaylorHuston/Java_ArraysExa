@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 /*
  * Basic Array functionality
- * From "Java How To Program, 10/e, Early Objects" - Chapter 7.
+ * Based on "Java How To Program, 10/e, Early Objects" - Chapter 7.
  */
 
 public class ArraysEx {
